@@ -1,0 +1,9 @@
+D:/kiwi_oop/kiwi_ui/build-ui-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/ui.dir
+D:/kiwi_oop/kiwi_ui/build-ui-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/kiwi_oop/kiwi_ui/build-ui-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/kiwi_oop/kiwi_ui/build-ui-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+D:/kiwi_oop/kiwi_ui/build-ui-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
+D:/kiwi_oop/kiwi_ui/build-ui-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+D:/kiwi_oop/kiwi_ui/build-ui-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+D:/kiwi_oop/kiwi_ui/build-ui-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/ui_autogen_timestamp_deps.dir
+D:/kiwi_oop/kiwi_ui/build-ui-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/ui_autogen.dir
