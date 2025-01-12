@@ -1,0 +1,189 @@
+#include "add_to_cart.h"
+#include "ui_add_to_cart.h"
+
+
+std::vector<std::tuple<std::string, int>> Add_to_Cart::id_in_cart;
+
+Add_to_Cart::Add_to_Cart(QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::Add_to_Cart)
+{
+    ui->setupUi(this);
+}
+
+Add_to_Cart::~Add_to_Cart()
+{
+    delete ui;
+}
+
+std::tuple<std::string, int> add_id_in_cart;
+void Add_to_Cart::on_ok_btn_clicked()
+{
+    bool a;
+    std::string b;
+    int c;
+    b = ui->ID_in->text().toStdString();
+    c = ui->Quantity->text().toInt(&a);
+    add_id_in_cart = std::make_tuple(b, c);
+    bool check_vr = false;
+    bool check_phone = false;
+    bool check_tablet = false;
+    bool check_desktop = false;
+    bool check_laptop = false;
+    bool check_watch = false;
+    bool check_handheld = false;
+    bool check_stationed = false;
+    if (a && std::get<1>(add_id_in_cart) > 0){
+        for(VR &i : VR::vr_vec){
+            if(i.getID() == std::get<0>(add_id_in_cart)){
+                check_vr = true;
+            }
+        }
+        for(Smartphones &i : Smartphones::smartphones_vec){
+            if(i.getID() == std::get<0>(add_id_in_cart)){
+                check_phone = true;
+            }
+        }
+        for(Tablet &i : Tablet::tablet_vec){
+            if(i.getID() == std::get<0>(add_id_in_cart)){
+                check_tablet = true;
+            }
+        }
+        for(Desktop &i : Desktop::desktop_vec){
+            if(i.getID() == std::get<0>(add_id_in_cart)){
+                check_desktop = true;
+            }
+        }
+        for(Laptop &i : Laptop::laptop_vec){
+            if(i.getID() == std::get<0>(add_id_in_cart)){
+                check_laptop = true;
+            }
+        }
+        for(Smartwatch &i : Smartwatch::smartwatch_vec){
+            if(i.getID() == std::get<0>(add_id_in_cart)){
+                check_watch = true;
+            }
+        }
+        for(Handheld &i : Handheld::handheld_vec){
+            if(i.getID() == std::get<0>(add_id_in_cart)){
+                check_handheld = true;
+            }
+        }
+        for(Stationed &i : Stationed::stationed_vec){
+            if(i.getID() == std::get<0>(add_id_in_cart)){
+                check_stationed = true;
+            }
+        }
+
+        if (check_vr == true){
+            for(VR &i : VR::vr_vec){
+                if(i.getID() == std::get<0>(add_id_in_cart)){
+                    if(std::get<1>(add_id_in_cart) <= i.getQuantity()){
+                        id_in_cart.push_back(std::tuple(i.getID(), std::get<1>(add_id_in_cart)));
+                    }
+                    else {
+                        QMessageBox::warning(this, "Error", "Insufficient Quantity.");
+                    }
+
+                }
+            }
+        }
+        else if (check_phone == true){
+            for(Smartphones &i : Smartphones::smartphones_vec){
+                if(i.getID() == std::get<0>(add_id_in_cart)){
+                    if(std::get<1>(add_id_in_cart) <= i.getQuantity()) {
+                        id_in_cart.push_back(std::tuple(i.getID(), std::get<1>(add_id_in_cart)));
+                    }
+                    else {
+                        QMessageBox::warning(this, "Error", "Insufficient Quantity.");
+                    }
+                }
+            }
+        }
+        else if (check_tablet == true){
+            for(Tablet &i : Tablet::tablet_vec){
+                if(i.getID() == std::get<0>(add_id_in_cart)){
+                    if(std::get<1>(add_id_in_cart) <= i.getQuantity()) {
+                        id_in_cart.push_back(std::tuple(i.getID(), std::get<1>(add_id_in_cart)));
+                    }
+                    else {
+                        QMessageBox::warning(this, "Error", "Insufficient Quantity.");
+                    }
+
+                }
+            }
+        }
+        else if (check_desktop == true){
+            for(Desktop &i : Desktop::desktop_vec){
+                if(i.getID() == std::get<0>(add_id_in_cart)){
+                    if(std::get<1>(add_id_in_cart) <= i.getQuantity()) {
+                        id_in_cart.push_back(std::tuple(i.getID(), std::get<1>(add_id_in_cart)));
+                    }
+                    else{
+                        QMessageBox::warning(this, "Error", "Insufficient Quantity.");
+                    }
+                }
+            }
+        }
+        else if (check_laptop == true){
+            for(Laptop &i : Laptop::laptop_vec){
+                if(i.getID() == std::get<0>(add_id_in_cart)){
+                    if(std::get<1>(add_id_in_cart) <= i.getQuantity()) {
+                        id_in_cart.push_back(std::tuple(i.getID(), std::get<1>(add_id_in_cart)));
+                    }
+                    else{
+                        QMessageBox::warning(this, "Error", "Insufficient Quantity.");
+                    }
+                }
+            }
+        }
+        else if (check_watch == true){
+            for(Smartwatch &i : Smartwatch::smartwatch_vec){
+                if(i.getID() == std::get<0>(add_id_in_cart)){
+                    if(std::get<1>(add_id_in_cart) <= i.getQuantity()) {
+                        id_in_cart.push_back(std::tuple(i.getID(), std::get<1>(add_id_in_cart)));
+                    }
+                    else{
+                        QMessageBox::warning(this, "Error", "Insufficient Quantity.");
+                    }
+
+                }
+            }
+        }
+        else if (check_handheld == true){
+            for(Handheld &i : Handheld::handheld_vec){
+                if(i.getID() == std::get<0>(add_id_in_cart)){
+                    if(std::get<1>(add_id_in_cart) <= i.getQuantity()) {
+                        id_in_cart.push_back(std::tuple(i.getID(), std::get<1>(add_id_in_cart)));
+                    }
+                    else{
+                        QMessageBox::warning(this, "Error", "Insufficient Quantity.");
+                    }
+                }
+            }
+        }
+        else if (check_stationed == true){
+            for(Stationed &i : Stationed::stationed_vec){
+                if(i.getID() == std::get<0>(add_id_in_cart)){
+                    if(std::get<1>(add_id_in_cart) <= i.getQuantity()) {
+                        id_in_cart.push_back(std::tuple(i.getID(), std::get<1>(add_id_in_cart)));
+                    }
+                    else{
+                        QMessageBox::warning(this, "Error", "Insufficient Quantity.");
+                    }
+                }
+            }
+        }
+        else {
+            QMessageBox::information(this, "Error", "Don't have this product in the store");
+        }
+
+        this->close();
+    } else {
+        QMessageBox::warning(this, "Error", "Invalid quantity please try again.");
+        ui->Quantity->clear();
+        ui->ID_in->clear();
+    }
+
+}
+

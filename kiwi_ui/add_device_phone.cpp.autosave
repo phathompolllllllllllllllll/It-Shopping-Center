@@ -1,0 +1,26 @@
+#include "add_device_phone.h"
+#include "ui_add_device_phone.h"
+
+add_device_phone::add_device_phone(QWidget *parent, std::string cat)
+    : QDialog(parent)
+    , ui(new Ui::add_device_phone)
+{
+    ui->setupUi(this);
+    cata = cat;
+}
+
+add_device_phone::~add_device_phone()
+{
+    delete ui;
+}
+
+std::string brand_ph, model_ph, name_ph, display_ph, processor_ph, os_ph, charger_ph, camera_ph;
+int quantity, resolution_1_ph, resolution_2_ph, num_sim_ph, storage_ph, refreash_rate_ph;
+double price, dimension_ph1, dimension_ph2, dimension_ph3, wifi_ph, brightness_ph, bluetooth_ph, weight_ph, batterry_ph;
+bool biometric_ph1, biometric_ph2, biometric_ph3, have_;
+
+void add_device_phone::on_OK_btn_clicked()
+{
+    
+}
+

@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../dev_visual_im/compart.jpg</file>
+        <file>../dev_visual_im/console.png</file>
+        <file>../dev_visual_im/desktop.png</file>
+        <file>../dev_visual_im/laptop.png</file>
+        <file>../dev_visual_im/peripheral.png</file>
+        <file>../dev_visual_im/smartphones.png</file>
+        <file>../dev_visual_im/smartwatch.png</file>
+        <file>../dev_visual_im/tablet.png</file>
+        <file>../dev_visual_im/vr.png</file>
+        <file>../dev_visual_im/cart.png</file>
+    </qresource>
+</RCC>

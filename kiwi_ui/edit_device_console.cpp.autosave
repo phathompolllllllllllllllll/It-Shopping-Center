@@ -1,0 +1,28 @@
+#include "edit_device_console.h"
+#include "ui_edit_device_console.h"
+
+edit_device_console::edit_device_console(QWidget *parent, std::string cat)
+    : QDialog(parent)
+    , ui(new Ui::edit_device_console)
+{
+    ui->setupUi(this);
+    cata = cat;
+}
+
+edit_device_console::~edit_device_console()
+{
+    delete ui;
+}
+
+void edit_device_console::on_handheld_btn_clicked()
+{
+    Edit_device_handheld device_handheld(this, "Handheld");
+    device_handheld.setMode
+}
+
+
+void edit_device_console::on_Stationed_btn_clicked()
+{
+    
+}
+

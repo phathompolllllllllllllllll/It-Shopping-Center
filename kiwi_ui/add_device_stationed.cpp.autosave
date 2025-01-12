@@ -1,0 +1,64 @@
+#include "add_device_stationed.h"
+#include "ui_add_device_stationed.h"
+
+add_device_stationed::add_device_stationed(QWidget *parent, std::string cat)
+    : QDialog(parent)
+    , ui(new Ui::add_device_stationed)
+{
+    ui->setupUi(this);
+    cata = cat;
+}
+
+add_device_stationed::~add_device_stationed()
+{
+    delete ui;
+}
+
+std::string brand_st;
+std::string model_st;
+int quantity_st, resolution_1_st, resolution_2_st;
+double price_st;
+std::string name_st;
+std::string ssd_st;
+std::string size_st;
+std::string main_processor_st;
+std::string graphics_processor_st;
+int storage_capacity_st;
+std::string USB_st;
+std::string display_st;
+std::string input_output_port_st;
+std::string wifi_st;
+double weight_st;
+std::string bluetooth_st;
+double power_consumption_st;
+bool controller_vibration_st = false;
+bool TV_mode_st = false;
+
+void add_device_stationed::on_OK_btn_clicked()
+{
+    brand_st = ui->brand_lineEdit->text().toStdString();
+    model_st = ui->model_lineEdit->text().toStdString();
+    quantity_st = ui->quantity_lineEdit->text().toInt();
+    resolution_1_st = ui->resolution_lineEdit_1->text().toInt();
+    resolution_2_st = ui->resolution_lineEdit_2->text().toInt();
+    price_st = ui->price_lineEdit->text().toDouble();
+    name_st = ui->des_lineEdit->text().toStdString();
+    ssd_st = ui->SSD->text().toStdString();
+    size_st = ui->size->text().toStdString();
+    main_processor_st = ui->main_processor_lineEdit->text().toStdString();
+    graphics_processor_st = ui->graphiv_processor_lineEdit->text().toStdString();
+    storage_capacity_st = ui->storage_lineEdit->text().toInt();
+    USB_st = ui->USB_lineEdit->text().toStdString();
+    display_st = ui->display_lineEdit->text().toStdString();
+    input_output_port_st = ui->input_output_port->text().toStdString();
+    wifi_st = ui->wifi_lineEdit->text().toStdString();
+    weight_st = ui->weight_lineEdit->text().toDouble();
+    bluetooth_st = ui->bluetooth_lineEdit->text().toStdString();
+    power_consumption_st = ui->power_consum->text().toDouble();
+    if(ui->controller_vibra->isChecked()){
+        controller_vibration_st = true;
+    }
+    if(ui->have_tv_mode->)
+}
+
+

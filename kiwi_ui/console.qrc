@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../dev_visual_im/console.png</file>
+    </qresource>
+</RCC>
