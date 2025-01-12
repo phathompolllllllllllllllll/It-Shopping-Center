@@ -1,0 +1,15 @@
+#include "edit_device_phones.h"
+#include "ui_edit_device_phones.h"
+
+edit_device_phones::edit_device_phones(QWidget *parent, std::string cat)
+    : QDialog(parent)
+    , ui(new Ui::edit_device_phones)
+{
+    ui->setupUi(this);
+    
+}
+
+edit_device_phones::~edit_device_phones()
+{
+    delete ui;
+}

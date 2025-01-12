@@ -1,0 +1,106 @@
+#include "edit_device_watch.h"
+#include "ui_edit_device_watch.h"
+
+edit_device_watch::edit_device_watch(QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::edit_device_watch)
+{
+    ui->setupUi(this);
+}
+
+edit_device_watch::~edit_device_watch()
+{
+    delete ui;
+}
+
+std::string brand_w_edit;
+std::string model_w_edit;
+std::string name_w_edit;
+int quantity_w_edit;
+double price_w_edit;
+std::string display_w_edit;
+bool has_sim_w_edit = false;
+double bluetooth_w_edit;
+double wifi_w_edit;
+double capacity_GB_w_edit;
+double screen_size_mm_w_edit;
+double case_size_mm_w_edit;
+double brightness_nits_w_edit;
+double water_resistance_m_w_edit;
+double battery_mAh_w_edit;
+double weight_g_w_edit;
+bool heartrate_monitoring_w_edit= false;
+bool has_microphones_w_edit= false;
+bool has_gps_w_edit= false;
+bool has_blood_oxygen_sensor_w_edit= false;
+bool has_speaker_w_edit= false;
+
+
+void edit_device_watch::on_OK_btn_clicked()
+{
+    Smartwatch w;
+
+    price_w_edit = ui->price_lineEdit->text().toDouble();
+    quantity_w_edit = ui->quantity_lineEdit->text().toInt();
+    brand_w_edit = ui->brand_lineEdit->text().toStdString();
+    model_w_edit = ui->model_lineEdit->text().toStdString();
+    name_w_edit = ui->des_lineEdit->text().toStdString();
+    display_w_edit = ui->display_lineEdit->text().toStdString();
+    if(ui->has_sim->isChecked()){
+        has_sim_w_edit = true;
+    }
+    bluetooth_w_edit = ui->bluetooth_lineEdit->text().toDouble();
+    wifi_w_edit = ui->wifi_lineEdit->text().toDouble();
+    capacity_GB_w_edit = ui->capacity->text().toDouble();
+    screen_size_mm_w_edit = ui->screen_size->text().toDouble();
+    case_size_mm_w_edit = ui->case_size->text().toDouble();
+    brightness_nits_w_edit = ui->brightness_lineEdit->text().toDouble();
+    water_resistance_m_w_edit = ui->water_resistance->text().toDouble();
+    battery_mAh_w_edit = ui->battery_lineEdit->text().toDouble();
+    weight_g_w_edit = ui->weight_lineEdit->text().toDouble();
+    if(ui->has_heartrate_monitering->isChecked()){
+        heartrate_monitoring_w_edit = true;
+    }
+    if(ui->has_mic->isChecked()){
+        has_microphones_w_edit = true;
+    }
+    if(ui->has_gps->isChecked()){
+        has_gps_w_edit = true;
+    }
+    if(ui->has_blood_O2_sensor->isChecked()){
+        has_blood_oxygen_sensor_w_edit = true;
+    }
+    if(ui->has_speaker->isChecked()){
+        has_speaker_w_edit = true;
+    }
+    
+    w.setID(cata);
+    w.setDescription(name_w_edit);
+    w.setBrand(brand_w_edit);
+    w.setModel(model_w_edit);
+    w.setPrice(price_w_edit);
+    w.setQuantity(std::stoi(quantity));
+    w.setOnDisplay(std::stoi(on_display));
+    w.setDisplay(display);
+    w.setBattery(std::stod(battery_mAh));
+    w.setHaveBluetooth(std::stod(bluetooth));
+    w.setScreenSize(std::stod(screen_size_mm));
+    w.setCaseSize(std::stod(case_size_mm));
+    w.setWeight(std::stod(weight_g));
+    w.setBrightness(std::stod(brightness_nits));
+    w.setWaterResistance(std::stod(water_resistance_m));
+    w.setHeartrateMonitoring(std::stoi(heartrate_monitoring));
+    w.setHasMicrophones(std::stoi(has_microphones));
+    w.setWifi(std::stod(wifi));    
+    w.setCapacity(std::stod(capacity_GB));
+    w.setHasGps(std::stoi(has_gps));
+    w.setHasBloodOxygenSensor(std::stoi(has_blood_oxygen_sensor));
+    w.setHasSpeaker(std::stoi(has_speaker));
+    w.setSim(std::stoi(sim));
+    w.setImagePath(image_path);
+    
+    
+
+
+}
+

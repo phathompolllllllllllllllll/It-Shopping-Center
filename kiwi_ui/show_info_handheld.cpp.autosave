@@ -1,0 +1,21 @@
+#include "show_info_handheld.h"
+#include "ui_show_info_handheld.h"
+
+Show_info_Handheld::Show_info_Handheld(QWidget *parent, std::string cat)
+    : QDialog(parent)
+    , ui(new Ui::Show_info_Handheld)
+{
+    ui->setupUi(this);
+    cata = cat;
+    
+    for(Handheld &i : Handheld::handheld_vec){
+        if(i.getID() == cata){
+            ui->brand_lineEdit->setT
+        }
+    }
+}
+
+Show_info_Handheld::~Show_info_Handheld()
+{
+    delete ui;
+}
